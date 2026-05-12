@@ -1,0 +1,32 @@
+=== Marabou MNIST FC robustness sweep ===
+Images: 3 | Epsilons: [0.001, 0.005, 0.01, 0.02, 0.08, 0.1]
+Timeout per query: 100s
+
+--- Image #0 (true label = 7) ---
+  eps=0.001   result=UNSAT   runtime=   0.14s
+  eps=0.005   result=UNSAT   runtime=   0.53s
+  eps=0.01    result=UNSAT   runtime=   0.49s
+  eps=0.02    result=UNSAT   runtime=   0.46s
+  eps=0.08    result=TIMEOUT runtime= 100.68s
+  eps=0.1     result=SAT     runtime=   8.15s  adv_label=3
+    -> saved counterexample_img0_eps0.1_true7_adv3.png
+
+--- Image #1 (true label = 2) ---
+  eps=0.001   result=UNSAT   runtime=   0.16s
+  eps=0.005   result=UNSAT   runtime=   0.54s
+  eps=0.01    result=UNSAT   runtime=   0.57s
+  eps=0.02    result=UNSAT   runtime=   0.55s
+  eps=0.08    result=TIMEOUT runtime= 100.25s
+  eps=0.1     result=TIMEOUT runtime= 100.25s
+
+--- Image #2 (true label = 1) ---
+  eps=0.001   result=UNSAT   runtime=   0.22s
+  eps=0.005   result=UNSAT   runtime=   0.81s
+  eps=0.01    result=UNSAT   runtime=   1.21s
+  eps=0.02    result=TIMEOUT runtime= 100.33s
+  eps=0.08    result=SAT     runtime=   6.74s  adv_label=8
+    -> saved counterexample_img2_eps0.08_true1_adv8.png
+  eps=0.1     result=SAT     runtime=   7.41s  adv_label=8
+    -> saved counterexample_img2_eps0.1_true1_adv8.png
+
+Done in 433.7s total.
